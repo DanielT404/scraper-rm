@@ -52,8 +52,8 @@ data = _.chunk(data, 5000); // split data in multiple chunks of 5000 elements
                 product.setName(data[i][j]["nume-articol-scurt"]);
                 product.setDescription(data[i][j]["nume-articol-lung"]);
                 product.setUnit(data[i][j]["unitate-masura"]);
-                imgs.map((img) => {
-                    let filename = `https://idratherprogram.com/images/${id}.jpg`;
+                imgs.map((img, idx) => {
+                    let filename = `https://idratherprogram.com/images/rm-scraper/${id}-${idx}.jpg`;
                     product.addImage(filename);
                 })
                 product.setMainCategory(data[i][j]["divizie-interna"]);

@@ -13,8 +13,8 @@ const saveImageToDisk = (url, filename) => {
 }
 
 const copyImageToDisk = (imgs, id) => {
-    imgs.map((img) => {
-        let filename = `./images/${id}.jpg`;
+    imgs.map((img, idx) => {
+        let filename = `./images/rm-scraper/${id}-${idx}.jpg`;
         saveImageToDisk(img, filename);
     })
 }
