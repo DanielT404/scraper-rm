@@ -24,7 +24,7 @@ data = _.chunk(data, 5000); // split data in multiple chunks of 5000 elements
             if(i == 0 && j == 0) continue; 
             const page = await browser.newPage();
             let id = Buffer.from(data[i][j]["id-extern"].trim(), 'utf-8').toString();
-            id = id.replace(" ", "%20%");
+            id = id.replace(" ", "");
             console.log(`Articol ${id} - verificare romstal \n`);
             await page.goto(`https://www.romstal.ro/index.php?page=search&sn.q=${id}`);
             // wait 2s after going to page to ensure DOM availability
